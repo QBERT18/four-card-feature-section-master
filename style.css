@@ -1,0 +1,129 @@
+@import url("./reset.css");
+
+:root {
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --very-dark-blue: hsl(234, 12%, 34%);
+  --grayish-blue: hsl(229, 6%, 66%);
+  --very-light-gray: hsl(0, 0%, 98%);
+}
+
+* {
+  font-size: 0.9375rem;
+}
+
+html,
+body {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  background: var(--very-light-gray);
+}
+
+main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.teaser {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.eyebrow {
+  font-weight: 200;
+}
+
+.headline {
+  font-weight: 600;
+  margin-top: 0.9375rem;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 0.9375rem;
+  margin-top: 1.5625rem;
+  line-height: 1.5;
+  color: var(--grayish-blue);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 1.25rem 0rem;
+  grid-template-areas:
+    "supervisor"
+    "teambuilder"
+    "karma"
+    "calculator";
+  margin-top: 2.5rem;
+}
+
+.card {
+  -webkit-box-shadow: 0px 0px 25px 0px var(--grayish-blue);
+  box-shadow: 0px 0px 25px 0px var(--grayish-blue);
+  padding: 2rem 2rem 1rem 2rem;
+  max-width: 21.875rem;
+}
+
+.card-headline {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.card-text {
+  margin-top: 0.5rem;
+  font-weight: 400;
+  color: var(--grayish-blue);
+  line-height: 1.5;
+}
+
+.supervisor {
+  border-top: 0.2813rem solid var(--cyan);
+  border-radius: 0.3125rem;
+  grid-area: supervisor;
+}
+
+.teambuilder {
+  border-top: 0.2813rem solid var(--red);
+  border-radius: 0.3125rem;
+  grid-area: teambuilder;
+}
+
+.karma {
+  border-top: 0.2813rem solid var(--orange);
+  border-radius: 0.3125rem;
+  grid-area: karma;
+}
+
+.calculator {
+  border-top: 0.2813rem solid var(--blue);
+  border-radius: 0.3125rem;
+  grid-area: calculator;
+}
+
+.card-image {
+  text-align: end;
+  margin-top: 3rem;
+}
+
+@media only screen and (min-width: 375px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1.25rem 1.25rem;
+    align-items: center;
+    grid-template-areas:
+      "supervisor teambuilder calculator"
+      "supervisor karma calculator";
+  }
+  .card {
+    max-width: 18.75rem;
+  }
+}
